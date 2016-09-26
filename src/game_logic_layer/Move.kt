@@ -1,11 +1,8 @@
 package game_logic_layer
 
-/**
- * Created by Seven on 25.09.2016.
- */
-enum class Move {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
+enum class Move(val isVertical: Boolean, val isHorzontal: Boolean = !isVertical) {
+    UP(true),
+    DOWN(true),
+    LEFT(false),
+    RIGHT(false);
 }

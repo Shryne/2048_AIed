@@ -2,14 +2,6 @@ package game_logic_layer
 
 import java.util.*
 
-fun main(args: Array<String>) {
-    val con = ArrayList<Int>()
-    con.forEach {  }
-}
-
-/**
- * Created by Seven on 24.09.2016.
- */
 class Game44 : Game {
     override var score = 0
         private set
@@ -17,13 +9,23 @@ class Game44 : Game {
         private set
     override var moveAmount = 0
         private set
-    override val columns: View<View<Int>>
+    override val columns: ArrayList<ArrayList<Int>>
         get() = throw UnsupportedOperationException()
-    override val rows: View<View<Int>>
+    override val rows: ArrayList<ArrayList<Int>>
         get() = throw UnsupportedOperationException()
 
     override fun progress(move: Move): Long {
-        throw UnsupportedOperationException()
+        if (move.isVertical) {
+            for (x in columns.indices) {
+                for (y in columns[x]) {
+                    if (columns[x][y] != 0) {
+
+                    }
+                }
+            }
+        } else {
+
+        }
     }
 
     override fun getPossibleMoves(): Array<Move> {
@@ -31,18 +33,6 @@ class Game44 : Game {
     }
 
     override fun isApplicable(move: Move): Boolean {
-
+        return false;
     }
 }
-
-interface  MapArray<T> {
-    fun forEach(elem: T): Unit
-}
-
-/*
-class ColoumnContainer: MapArray<Column> {
-    fun forEach(elem: T) =
-
-}*/
-
-class Column

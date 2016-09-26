@@ -1,14 +1,13 @@
 package game_logic_layer
 
-/**
- * Created by Seven on 24.09.2016.
- */
+import java.util.*
+
 interface Game {
     val score: Int
     val highestField: Int
     val moveAmount: Int
-    val columns: View<View<Int>>
-    val rows: View<View<Int>>
+    val columns: ArrayList<ArrayList<Int>>
+    val rows: ArrayList<ArrayList<Int>>
 
     fun progress(move: Move): Long
     fun getPossibleMoves(): Array<Move>
